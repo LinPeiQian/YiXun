@@ -1,5 +1,7 @@
 package com.zhy.http.okhttp.request;
 
+import android.content.Context;
+
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.Callback;
 
@@ -81,14 +83,16 @@ public class RequestCall
 
     public void execute(Callback callback)
     {
-        buildCall(callback);
+        execute(null , callback);
+    }
 
+    public void execute(Context context , Callback callback){
+        buildCall(callback);
         if (callback != null)
         {
             callback.onBefore(request, getOkHttpRequest().getId());
         }
-
-        OkHttpUtils.getInstance().execute(this, callback);
+        OkHttpUtils.getInstance().execute(context , this, callback);
     }
 
     public Call getCall()

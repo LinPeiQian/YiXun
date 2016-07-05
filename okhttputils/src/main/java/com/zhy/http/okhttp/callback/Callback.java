@@ -54,7 +54,7 @@ public abstract class Callback<T>
 
     public abstract void onError(Call call, Exception e, int id);
 
-    public abstract void onResponse(T response, int id);
+    public abstract void onResponse(T response, int id , boolean cache);
 
 
     public static Callback CALLBACK_DEFAULT = new Callback()
@@ -73,7 +73,7 @@ public abstract class Callback<T>
         }
 
         @Override
-        public void onResponse(Object response, int id)
+        public void onResponse(Object response, int id , boolean cache)
         {
 
         }

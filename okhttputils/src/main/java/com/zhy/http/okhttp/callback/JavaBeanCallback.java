@@ -1,7 +1,6 @@
 package com.zhy.http.okhttp.callback;
 
 import android.util.Log;
-import android.widget.Toast;
 
 import com.zhy.http.okhttp.gson.GsonInstance;
 
@@ -31,8 +30,9 @@ public class JavaBeanCallback<T> extends Callback<T>{
     }
 
     @Override
-    public void onResponse(T response, int id) {
+    public void onResponse(T response, int id, boolean cache) {
 
     }
+
 
 }

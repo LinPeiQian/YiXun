@@ -3,7 +3,7 @@ package com.chwings.letgotips;
 import com.brianLin.LibApplication;
 import com.brianLin.download.DownloadConfiguration;
 import com.brianLin.download.DownloadManager;
-import com.brianLin.http.OkHttpUtils;
+import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.util.concurrent.TimeUnit;
 

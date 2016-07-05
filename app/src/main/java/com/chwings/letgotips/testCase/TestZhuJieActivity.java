@@ -6,10 +6,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.brianLin.http.OkHttpUtils;
-import com.brianLin.http.callback.StringCallback;
 import com.chwings.letgotips.R;
 import com.chwings.letgotips.activity.BaseActivity;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -39,15 +39,17 @@ public class TestZhuJieActivity extends BaseActivity {
     @OnClick(R.id.textview)
     void onTextView(){
         Toast.makeText(this , "textview" , Toast.LENGTH_LONG).show();
-        OkHttpUtils.get().url("").build().execute(new StringCallback() {
+        OkHttpUtils.get().url("http://www.baidu.com").build().execute(new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
+                Log.d(TAG , "onError = " + e);
             }
 
             @Override
-            public void onResponse(String response, int id) {
-
+            public void onResponse(String response, int id, boolean cache) {
+                Log.d(TAG , "cache = " + cache + "response = "+response );
             }
+
         });
     }
 }
