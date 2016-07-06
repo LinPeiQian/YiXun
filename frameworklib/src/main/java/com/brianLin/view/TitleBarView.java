@@ -139,7 +139,7 @@ public class TitleBarView extends RelativeLayout implements View.OnClickListener
         mRightText = typeArray.getString(R.styleable.TitleBarView_rightText);
         mRightImage = typeArray.getResourceId(R.styleable.TitleBarView_rightImage , 0);
         mCenterText = typeArray.getString(R.styleable.TitleBarView_centerText);
-        mCenterTextColor = typeArray.getColor(R.styleable.TitleBarView_centerTextColor, Color.WHITE);
+        mCenterTextColor = typeArray.getColor(R.styleable.TitleBarView_centerTextColor, Color.BLACK);
         mCenterTextSize = typeArray.getDimension(R.styleable.TitleBarView_centerTestSize , 0);
         mCenterViewId = typeArray.getResourceId(R.styleable.TitleBarView_centerView, 0);
         typeArray.recycle();

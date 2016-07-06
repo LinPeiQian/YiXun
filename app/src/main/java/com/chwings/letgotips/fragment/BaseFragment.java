@@ -15,11 +15,13 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseFragment extends Fragment {
 
+
     public final String TAG = this.getClass().getSimpleName();
 
     public abstract int getLayoutId();
 
     private View mView;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,5 +45,7 @@ public abstract class BaseFragment extends Fragment {
 
         }
     }
+
+
 
 }
