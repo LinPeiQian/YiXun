@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@color/black">
 
     <com.brianLin.view.TitleBarView
         android:id="@+id/title"
@@ -13,6 +13,7 @@
         app:centerText="指南"
         app:rightImage="@drawable/ic_divider_list_checkbox_checked"
         app:leftView="@layout/layout_guide_title_city"
+        android:background="@color/bg"
         />
 
     <com.chwings.letgotips.view.ViewPagerIndicator
@@ -77,6 +78,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:background="@color/bg"
         />
 
 </LinearLayout>

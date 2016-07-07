@@ -26,9 +26,10 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(':frameworklib')
     apt 'com.jakewharton:butterknife-compiler:8.1.0'
-    compile project(':base-adapter-library')
     compile project(':okhttputils')
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.jakewharton:butterknife:8.1.0'
     compile 'com.android.support:support-v4:22.2.1'
+    compile project(':base-adapter-library')
+    compile project(':baseadapter-recyclerview')
 }

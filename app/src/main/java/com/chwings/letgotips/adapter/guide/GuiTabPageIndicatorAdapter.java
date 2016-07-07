@@ -1,4 +1,4 @@
-package com.chwings.letgotips.adapter;
+package com.chwings.letgotips.adapter.guide;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 指南ViewPager适配器
+ * Created by Jensen on 2016/7/7.
  */
 public class GuiTabPageIndicatorAdapter extends FragmentPagerAdapter {
 

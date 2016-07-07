@@ -1,15 +1,18 @@
 package com.chwings.letgotips.fragment.guide;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.chwings.letgotips.R;
+import com.chwings.letgotips.activity.guide.HighQualityTravelActivity;
 import com.chwings.letgotips.fragment.BaseFragment;
 import com.chwings.letgotips.itemDecoration.SpaceItemDecoration;
 import com.chwings.letgotips.testCase.bean.TestTravelBean;
@@ -23,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * 指南中viewpager的 let go模块
@@ -97,6 +101,13 @@ public class LetGoFragment extends BaseFragment {
         infoList.add(R.drawable.i33333333333);
         infoList.add(R.drawable.i33333333333);
         infoList.add(R.drawable.i33333333333);
+    }
+
+    @OnClick(R.id.tv_all)
+    public void onTravelAll(View view){
+        //全部精品游记
+        Intent intent = new Intent(getActivity() , HighQualityTravelActivity.class);
+        getActivity().startActivity(intent);
     }
 
 }

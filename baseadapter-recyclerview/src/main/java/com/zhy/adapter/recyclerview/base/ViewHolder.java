@@ -1,4 +1,4 @@
-package com.zhy.base.adapter;
+package com.zhy.adapter.recyclerview.base;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -23,41 +23,32 @@ import android.widget.TextView;
 public class ViewHolder extends RecyclerView.ViewHolder
 {
     private SparseArray<View> mViews;
-    private int mPosition;
     private View mConvertView;
     private Context mContext;
-    private int mLayoutId;
 
-    public ViewHolder(Context context, View itemView, ViewGroup parent, int position)
+    public ViewHolder(Context context, View itemView)
     {
         super(itemView);
         mContext = context;
         mConvertView = itemView;
-        mPosition = position;
         mViews = new SparseArray<View>();
-        mConvertView.setTag(this);
-
     }
 
 
-    public static ViewHolder get(Context context, View convertView,
-                                 ViewGroup parent, int layoutId, int position)
+    public static ViewHolder createViewHolder(Context context, View itemView)
     {
-        if (convertView == null)
-        {
-            View itemView = LayoutInflater.from(context).inflate(layoutId, parent,
-                    false);
-            ViewHolder holder = new ViewHolder(context, itemView, parent, position);
-            holder.mLayoutId = layoutId;
-            return holder;
-        } else
-        {
-            ViewHolder holder = (ViewHolder) convertView.getTag();
-            holder.mPosition = position;
-            return holder;
-        }
+        ViewHolder holder = new ViewHolder(context, itemView);
+        return holder;
     }
 
+    public static ViewHolder createViewHolder(Context context,
+                                              ViewGroup parent, int layoutId)
+    {
+        View itemView = LayoutInflater.from(context).inflate(layoutId, parent,
+                false);
+        ViewHolder holder = new ViewHolder(context, itemView);
+        return holder;
+    }
 
     /**
      * 通过viewId获取控件
@@ -80,6 +71,11 @@ public class ViewHolder extends RecyclerView.ViewHolder
     {
         return mConvertView;
     }
+
+
+
+
+    /****以下为辅助方法*****/
 
     /**
      * 设置TextView的值
@@ -271,13 +267,5 @@ public class ViewHolder extends RecyclerView.ViewHolder
         return this;
     }
 
-    public void updatePosition(int position)
-    {
-        mPosition = position;
-    }
 
-    public int getLayoutId()
-    {
-        return mLayoutId;
-    }
 }
