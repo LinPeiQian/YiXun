@@ -19,6 +19,14 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <!--  这个是加入的代码 -->
+    <style name="share_pop_anim_style">
+        <item name="android:windowEnterAnimation">@anim/share_in</item>
+        <!-- 指定显示的动画xml -->
+
+        <item name="android:windowExitAnimation">@anim/share_out</item>
+        <!-- 指定消失的动画xml -->
+    </style>
 
 
 </resources>

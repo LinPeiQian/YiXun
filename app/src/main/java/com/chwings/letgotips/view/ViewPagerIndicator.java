@@ -38,8 +38,8 @@ public class ViewPagerIndicator extends LinearLayout
 	/**
 	 * path构成一个三角形
 	 */
-	private Path mPath;
-	/**
+	 private Path mPath;
+	 /**
 	 * 三角形的宽度
 	 */
 	private int mTriangleWidth;

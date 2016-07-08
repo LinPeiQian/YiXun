@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.text.util.Linkify;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 public class ViewHolder extends RecyclerView.ViewHolder
 {
@@ -35,8 +38,7 @@ public class ViewHolder extends RecyclerView.ViewHolder
         mConvertView = itemView;
         mPosition = position;
         mViews = new SparseArray<View>();
-        mConvertView.setTag(this);
-
+        mConvertView.setTag(R.string.app_name,this);
     }
 
 
@@ -52,7 +54,7 @@ public class ViewHolder extends RecyclerView.ViewHolder
             return holder;
         } else
         {
-            ViewHolder holder = (ViewHolder) convertView.getTag();
+            ViewHolder holder = (ViewHolder) convertView.getTag(R.string.app_name);
             holder.mPosition = position;
             return holder;
         }
@@ -100,6 +102,17 @@ public class ViewHolder extends RecyclerView.ViewHolder
         ImageView view = getView(viewId);
         view.setImageResource(resId);
         return this;
+    }
+
+    public ViewHolder setImageUrl(ImageView view , String url){
+        Glide.with(view.getContext()).load(url).into(view);
+        return this ;
+    }
+
+    public ViewHolder setImageUrl(int viewId, String url){
+        ImageView view = getView(viewId);
+        Glide.with(view.getContext()).load(url).into(view);
+        return this ;
     }
 
     public ViewHolder setImageBitmap(int viewId, Bitmap bitmap)

@@ -2,12 +2,14 @@ package com.zhy.base.adapter.recyclerview;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.zhy.base.adapter.ViewHolder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,6 +23,8 @@ public abstract class CommonAdapter<T> extends RecyclerView.Adapter<ViewHolder>
     protected LayoutInflater mInflater;
 
     private OnItemClickListener mOnItemClickListener;
+
+    public final String TAG = getClass().getSimpleName();
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener)
     {
@@ -101,5 +105,51 @@ public abstract class CommonAdapter<T> extends RecyclerView.Adapter<ViewHolder>
         return mDatas.size();
     }
 
+    public T getItem(int position){
+        return mDatas.get(position);
+    }
 
+    public void addData2Last(T data){
+        mDatas.add(data);
+        notifyDataSetChanged();
+    }
+
+    public void addData2First(T data){
+        mDatas.add(0 , data);
+        notifyDataSetChanged();
+    }
+
+    public void addData(T data , int position){
+        mDatas.add(position , data);
+        notifyDataSetChanged();
+    }
+
+    public void addAll2Last(List<T> datas){
+        mDatas.addAll(datas);
+        notifyDataSetChanged();
+    }
+
+    public void setData(List<T> datas){
+        mDatas.clear();
+        mDatas.addAll(datas);
+        notifyDataSetChanged();
+    }
+
+    public void addAll2First(List<T> datas){
+        mDatas.addAll(0 , datas);
+    }
+
+    public void addAll(List<T> datas , int position){
+        mDatas.addAll(position , datas);
+    }
+
+    public void remove(int position){
+        mDatas.remove(position);
+        notifyDataSetChanged();
+    }
+
+    public void remove(T data){
+        mDatas.remove(data);
+        notifyDataSetChanged();
+    }
 }

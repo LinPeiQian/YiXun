@@ -27,9 +27,10 @@ dependencies {
     compile project(':frameworklib')
     apt 'com.jakewharton:butterknife-compiler:8.1.0'
     compile project(':okhttputils')
+    compile project(':base-adapter-library')
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.jakewharton:butterknife:8.1.0'
     compile 'com.android.support:support-v4:22.2.1'
-    compile project(':base-adapter-library')
-    compile project(':baseadapter-recyclerview')
+    compile 'com.android.support:recyclerview-v7:22.2.1'
+    compile 'com.android.support:design:22.2.1'
 }

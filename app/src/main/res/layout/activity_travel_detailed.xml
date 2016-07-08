@@ -1,201 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/ll_all"
     android:background="@color/black"
-    android:fillViewport="true"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
     tools:context="com.chwings.letgotips.activity.guide.TravelDetailedActivity">
 
-    <LinearLayout
-        android:id="@+id/ll_detailed"
+    <com.brianLin.view.TitleBarView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/bg"
+        app:centerText="维多利亚港一日行"
+        app:leftBackPressed="true"
+        app:leftImage="@drawable/ic_divider_list_checkbox_checked"
+        app:rightImage="@drawable/ic_divider_list_checkbox_checked" />
+
+    <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         android:background="@color/bg"
-        android:orientation="vertical">
-
-        <com.brianLin.view.TitleBarView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/title_height"
-            android:background="@color/bg"
-            app:centerText="维多利亚港一日行"
-            app:leftBackPressed="true"
-            app:leftImage="@drawable/ic_divider_list_checkbox_checked"
-            app:rightImage="@drawable/ic_divider_list_checkbox_checked" />
-
-        <ImageView
-            android:id="@+id/iv_cover"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/i33333333333" />
+        >
 
         <LinearLayout
+            android:id="@+id/ll_detailed"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/padding"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:background="@color/bg"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                android:text="[穿越维多利亚]" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="巴拉巴拉巴拉巴拉巴拉巴巴拉拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"/>
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:padding="10dp">
 
             <ImageView
-                android:id="@+id/iv_avater"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@drawable/i33333333333"
-                android:layout_alignParentLeft="true"
+                android:id="@+id/iv_cover"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                android:layout_marginRight="5dp"/>
+                android:src="@drawable/i33333333333" />
 
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="name"
-                android:textSize="17sp"
-                android:layout_toRightOf="@id/iv_avater"
-                android:layout_alignParentTop="true"
-                />
-
-            <TextView
-                android:id="@+id/tv_nickname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="香港通"
-                android:layout_toRightOf="@id/tv_name"
-                android:layout_alignBaseline="@id/tv_name"
-                android:layout_marginLeft="5dp"
-                />
-
-            <TextView
-                android:id="@+id/tv_focus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="关注"
-                android:layout_alignBaseline="@id/tv_nickname"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/bg_focus_travel_detailed"
-                android:paddingTop="2dp"
-                android:paddingLeft="7dp"
-                android:paddingRight="7dp"
-                android:paddingBottom="2dp"
-                android:gravity="right"
-                />
-
-            <TextView
-                android:id="@+id/tv_introduce"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="书名书名书名书名书名书名书名书名书名书名书名书名"
-                android:layout_toRightOf="@id/iv_avater"
-                android:layout_alignBaseline="@id/iv_avater"
-                android:layout_below="@id/tv_name"
-                android:layout_alignParentBottom="true"
-                android:gravity="bottom"
-                />
-        </RelativeLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:gravity="center_vertical">
-
-            <View
-                android:layout_width="2dp"
-                android:layout_height="match_parent"
-                android:background="#EEEEEE"
-                android:layout_marginLeft="45dp"
-                />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
+                android:layout_margin="@dimen/padding"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="景点"/>
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:text="[穿越维多利亚]" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="10"/>
-
+                    android:layout_weight="1"
+                    android:text="巴拉巴拉巴拉巴拉巴拉巴巴拉拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_avater"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/i33333333333" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@id/iv_avater"
+                    android:text="name"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/tv_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/tv_name"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/tv_name"
+                    android:text="香港通" />
+
+                <TextView
+                    android:id="@+id/tv_focus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/tv_nickname"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/bg_focus_travel_detailed"
+                    android:gravity="right"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="7dp"
+                    android:paddingRight="7dp"
+                    android:paddingTop="2dp"
+                    android:text="关注" />
+
+                <TextView
+                    android:id="@+id/tv_introduce"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/iv_avater"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/tv_name"
+                    android:layout_toRightOf="@id/iv_avater"
+                    android:gravity="bottom"
+                    android:text="书名书名书名书名书名书名书名书名书名书名书名书名" />
+            </RelativeLayout>
+
+            <com.brianLin.view.ListViewForScrollView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="美食"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="购物"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10"/>
-
-            </LinearLayout>
-
+                android:layout_marginRight="10dp"
+                android:divider="@null"
+                android:headerDividersEnabled="false" />
 
 
         </LinearLayout>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_timeline"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp"/>
-
-
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</LinearLayout>

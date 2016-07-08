@@ -106,7 +106,6 @@ public class GuideFragment extends BaseFragment implements View.OnClickListener{
             });
             mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
                     R.mipmap.ic_launcher));
-
         }
     }
 
