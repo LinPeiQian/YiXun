@@ -1,4 +1,4 @@
-package com.chwings.letgotips.adapter.guide;
+package com.chwings.letgotips.adapter.guide.guide;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

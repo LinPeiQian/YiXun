@@ -16,12 +16,14 @@
         app:rightView="@layout/title_notes_detailed_right"
         android:layout_alignParentTop="true"/>
 
-    <ScrollView
+    <com.chwings.letgotips.view.FloatViewScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black"
         android:fillViewport="true"
-        android:layout_below="@id/title">
+        android:layout_below="@id/title"
+        android:nestedScrollingEnabled="false">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -128,7 +130,8 @@
                     <RelativeLayout
                         android:id="@+id/rl_indicator"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:background="@color/bg">
 
                         <android.support.design.widget.TabLayout
                             android:id="@+id/tabLayout"
@@ -151,19 +154,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_about"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
             </LinearLayout>
 
 
         </LinearLayout>
 
 
-    </ScrollView>
+    </com.chwings.letgotips.view.FloatViewScrollView>
 
     <RelativeLayout
         android:id="@+id/rl_backup"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:layout_below="@id/title"
+        android:background="@color/bg"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
     </RelativeLayout>
 
 </RelativeLayout>

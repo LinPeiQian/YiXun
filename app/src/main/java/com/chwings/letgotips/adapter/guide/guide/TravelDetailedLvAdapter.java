@@ -1,4 +1,4 @@
-package com.chwings.letgotips.adapter.guide;
+package com.chwings.letgotips.adapter.guide.guide;
 
 import android.content.Context;
 import android.view.View;
